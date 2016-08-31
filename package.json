@@ -1,6 +1,6 @@
 {
   "name": "gulp-http-post",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "http post buffer to current url on pipe.",
   "main": "index.js",
   "scripts": {

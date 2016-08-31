@@ -8,7 +8,7 @@ const describe = require('mocha').describe;
 const it = require('mocha').it;
 const before = require('mocha').before;
 const after = require('mocha').after;
-describe('gulp-post', () => {
+describe('gulp-http-post', () => {
     const filePath = path.join('temp', 'file.tmp');
     before(done=> {
         fs.mkdir('temp', ()=> {
@@ -44,8 +44,9 @@ describe('gulp-post', () => {
     it('should response sth.', done=> {
         gulp.src(filePath)
             .pipe(post('https://npmjs.com', {
-                callback: (err, data)=> {
+                callback: (err, data, response)=> {
                     expect(data).to.be.an('string');
+                    expect(response).to.be.an('object');
                     done();
                 }
             }));

@@ -28,7 +28,7 @@ module.exports = (url, options)=> {
                     return opt;
                 })(option)
             }, (err, response, body)=> {
-                option.callback && option.callback(err, body);
+                option.callback && option.callback(err, body, response);
                 if (err) {
                     throw new pluginError(PLUGIN_NAME, err);
                 }

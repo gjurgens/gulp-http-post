@@ -44,11 +44,12 @@ var post = new require("gulp-http-post");
 gulp.task("build",function(){
     var options = {
                 encoding: "base64",
-                callback: function (err, data) {
+                callback: function (err, body, response) {
                     if(err){
                         console.error(err);
                     }else{
-                        console.log(data);
+                        console.log(body);
+                        console.log(response);
                     }
                 },
                 param1: "value1",

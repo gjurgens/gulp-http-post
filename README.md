@@ -27,6 +27,7 @@ gulp.task("post",function(){
 * Custom post params
 * Support buffer encoding
 * Support current callback
+* Callback get body and full http response object
 
 ## Installation
 

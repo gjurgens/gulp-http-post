@@ -1,7 +1,7 @@
 {
-  "name": "gulp-post",
-  "version": "1.0.2",
-  "description": "post buffer to current url on pipe.",
+  "name": "gulp-http-post",
+  "version": "0.0.0",
+  "description": "http post buffer to current url on pipe.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -report lcovonly"
@@ -31,6 +31,7 @@
     "chai": "^3.5.0",
     "eslint": "^2.5.3",
     "gulp": "^3.9.1",
+    "istanbul": "^0.4.5",
     "mocha": "^2.4.5"
   }
 }

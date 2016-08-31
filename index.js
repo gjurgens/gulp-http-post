@@ -30,7 +30,7 @@ module.exports = (url, options)=> {
             }, (err, response, body)=> {
                 if(typeof option.callback === 'function') {
                     var callbackResponse = option.callback(err, body, response);
-                    if(callbackResponse !== null || callbackResponse !== undefined) {
+                    if(callbackResponse !== null && callbackResponse !== undefined) {
                         throw new pluginError(PLUGIN_NAME, callbackResponse);
                     }
                 }

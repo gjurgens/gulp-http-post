@@ -8,7 +8,7 @@ const PLUGIN_NAME = "gulp-post";
  * @param options {Object}
  * @return {Function}
  * @example
- * gulp.src("folder").pipe(post("http://zhso.net/"));
+ * gulp.src("folder").pipe(post("http://mysite.com/"));
  */
 module.exports = (url, options)=> {
     let option = options || {};
@@ -28,7 +28,12 @@ module.exports = (url, options)=> {
                     return opt;
                 })(option)
             }, (err, response, body)=> {
-                option.callback && option.callback(err, body, response);
+                if(typeof option.callback === 'function') {
+                    var callbackResponse = option.callback(err, body, response);
+                    if(callbackResponse !== null || callbackResponse !== undefined) {
+                        throw new pluginError(PLUGIN_NAME, callbackResponse);
+                    }
+                }
                 if (err) {
                     throw new pluginError(PLUGIN_NAME, err);
                 }
